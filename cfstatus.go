@@ -20,7 +20,6 @@ func main() {
 	}
 
 	svc := cloudformation.New(session.New(), &aws.Config{Region: aws.String(*region)})
-	complete := false
 	nextToken := ""
 	type eventData struct {
 		EventId              string
@@ -32,7 +31,7 @@ func main() {
 	events := make([]eventData, 0)
 	eventStatus := make(map[string]eventData)
 
-	for complete == false {
+	for true {
 		params := &cloudformation.DescribeStackEventsInput{
 			StackName: aws.String(*stackName),
 		}
@@ -62,9 +61,15 @@ func main() {
 		eventStatus[events[ctr].LogicalResourceId] = events[ctr]
 	}
 	// probably should do some sorting at this point...
+
+	eventsInProgress := false
 	for _, currentEvent := range eventStatus {
 		if strings.Contains(currentEvent.ResourceStatus, "_IN_PROGRESS") {
+			eventsInProgress = true
 			fmt.Printf("%-60.60s %-20.20s %s\n", currentEvent.LogicalResourceId, currentEvent.ResourceStatus, currentEvent.ResourceType)
 		}
+	}
+	if eventsInProgress == false {
+		fmt.Println("No events are currently in progress")
 	}
 }

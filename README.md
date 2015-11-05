@@ -10,8 +10,14 @@ The default region is us-west-2.  AWS credentials are read from ~/.aws/credentia
 
 # Build from source:
 
-1. Set up your GOPATH environment variable:  export GOPATH=$HOME
-2. go get -u github.com/aws/aws-sdk-go
-3. go get github.com/vaughan0/go-ini
-4. go install
-5. ~/bin/cfstatus
+Install go:  https://golang.org/dl/
+
+Set up your GOPATH environment variable:  export GOPATH=$HOME
+
+1. mkdir -p ~/src/github.com/econnell
+2. cd ~/src/github.com/econnell
+3. git clone https://github.com/econnell/cfstatus.git
+4. go get -u github.com/aws/aws-sdk-go
+5. go get -u github.com/vaughan0/go-ini
+6. go install
+7. ~/bin/cfstatus -region us-west-2 -stack-name mystack

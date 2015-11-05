@@ -2,9 +2,9 @@
 
 # Install
 
-It's a go program, so just download the binary and run it:
+It's a go program, so just download the binary, decompress it, and run it:
 
-https://github.com/econnell/cfstatus/blob/master/cfstatus?raw=true
+https://github.com/econnell/cfstatus/blob/master/cfstatus.bz2?raw=true
 
 # Usage
 

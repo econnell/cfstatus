@@ -14,8 +14,10 @@ Install go if you don't have it:  https://golang.org/dl/
 
 Set up your GOPATH environment variable if you haven't already:  export GOPATH=$HOME
 
-1. go get -u github.com/econnell/cfstatus
-2. cd $GOPATH/src/github.com/econnell/cfstatus
-3. go get
-4. go install
-5. ~/bin/cfstatus -region us-west-2 -stack-name mystack
+```
+go get -u github.com/econnell/cfstatus
+cd $GOPATH/src/github.com/econnell/cfstatus
+go get
+go install
+~/bin/cfstatus -region us-west-2 -stack-name mystack
+```

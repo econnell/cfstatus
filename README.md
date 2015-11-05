@@ -1,5 +1,11 @@
 # cfstatus
 
+# Install
+
+It's a go program, so just download the binary and run it:
+
+https://github.com/econnell/cfstatus/blob/master/cfstatus?raw=true
+
 # Usage
 
 ```cfstatus -region [region name] -stack-name [stack name]```
